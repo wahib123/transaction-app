@@ -59,6 +59,7 @@ router.put("/user", verifyAuthToken, validate(userSchema.partial()), async (req,
     }
 })
 
+
 router.delete("/user",verifyAuthToken, async (req, res) => {
     const {id} = req.query
     const user = await Users.findOneAndDelete({_id: id})
